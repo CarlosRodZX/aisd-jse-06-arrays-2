@@ -1,63 +1,40 @@
-// 1. Greeting Function (Standard Function Declaration)
-function greet(name) {
-  return `Hello, ${name}! Welcome!`;
-}
+// Array of numbers
+const numbers = [5, 12, 8, 130, 44];
 
-// Test the Greeting function (Standard Function)
-console.log(greet("Alice")); // Output: Hello, Alice! Welcome!
+// 1. Filter numbers greater than 10
+const filteredNumbers = numbers.filter((num) => num > 10);
+console.log("Filtered Numbers (Greater than 10):", filteredNumbers);
+// Output: [12, 130, 44]
 
-// 2. Greeting Function (Arrow Function)
-const greetArrow = (name) => `Hello, ${name}! Welcome!`;
+// 2. Sort numbers in ascending order
+const sortedNumbers = numbers.sort((a, b) => a - b);
+console.log("Sorted Numbers (Ascending Order):", sortedNumbers);
+// Output: [5, 8, 12, 44, 130]
 
-// Test the Greeting function (Arrow Function)
-console.log(greetArrow("Bob")); // Output: Hello, Bob! Welcome!
+// 3. Check if all numbers are greater than 3
+const allGreaterThanThree = numbers.every((num) => num > 3);
+console.log("Are all numbers greater than 3?", allGreaterThanThree);
+// Output: true
 
-// 3. Even or Odd Checker (Standard Function Declaration)
-function isEvenOrOdd(number) {
-  if (number % 2 === 0) {
-    return `${number} is even`;
-  } else {
-    return `${number} is odd`;
-  }
-}
+// Array of words
+const words = ["banana", "strawberry", "kiwi", "grape", "apple"];
 
-// Test the Even or Odd function
-console.log(isEvenOrOdd(10)); // Output: 10 is even
-console.log(isEvenOrOdd(7)); // Output: 7 is odd
+// 4. Filter words longer than 5 characters
+const longWords = words.filter((word) => word.length > 5);
+console.log("Words Longer Than 5 Characters:", longWords);
+// Output: ['banana', 'strawberry']
 
-// 4. Square Function (Arrow Function)
-const square = (num) => num * num;
+// 5. Sort words alphabetically
+const sortedWords = words.sort();
+console.log("Alphabetically Sorted Words:", sortedWords);
+// Output: ['apple', 'banana', 'grape', 'kiwi', 'strawberry']
 
-// Test the Square function
-console.log(square(5)); // Output: 25
+// 6. Check if all words contain the letter 'e'
+const allContainE = words.every((word) => word.includes("e"));
+console.log('Do all words contain the letter "e"?', allContainE);
+// Output: true
 
-// 5. Add Function (Arrow Function)
-const add = (a, b) => a + b;
-
-// Test the Add function
-console.log(add(4, 6)); // Output: 10
-
-// 6. Subtract Function (Arrow Function)
-const subtract = (a, b) => a - b;
-
-// Test the Subtract function
-console.log(subtract(10, 3)); // Output: 7
-
-// 7. Multiply Function (Arrow Function)
-const multiply = (a, b) => a * b;
-
-// Test the Multiply function
-console.log(multiply(7, 5)); // Output: 35
-
-// 8. Divide Function (Arrow Function)
-const divide = (a, b) => {
-  if (b === 0) {
-    return "Cannot divide by zero!";
-  }
-  return a / b;
-};
-
-// Test the Divide function
-console.log(divide(20, 4)); // Output: 5
-console.log(divide(10, 0)); // Output: Cannot divide by zero!
-
+// 7. Check if all words are shorter than 10 characters
+const allShorterThan10 = words.every((word) => word.length < 10);
+console.log("Are all words shorter than 10 characters?", allShorterThan10);
+// Output: false
