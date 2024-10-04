@@ -268,7 +268,7 @@ Understanding how to use these array methods will empower you to work with large
 
 💾 **Not something to copy and paste** 💾
 
-**Note:**  This lab references a solution file located [here](https://github.com/HackerUSA-CE/aisd-wde-4-the-box-model/tree/solution) (link not shown).
+**Note:**  This lab references a solution file located [here](https://github.com/HackerUSA-CE/aisd-jse-06-arrays-2/tree/solution) (link not shown).
 
 
 ---
