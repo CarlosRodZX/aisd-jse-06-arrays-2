@@ -1,4 +1,4 @@
-# JavaScript Functions: Declarations and Arrow Functions
+### JavaScript Functions: Declarations and Arrow Functions
 ![JavaScript code snippet showing examples of function declarations and arrow functions.](./assets/images/example.png)
 ##
 
@@ -328,7 +328,7 @@ Understanding both types of functions and how to use them interchangeably will g
 
 💾 **Not something to copy and paste** 💾
 
-**Note:**  This lab references a solution file located [here](https://github.com/HackerUSA-CE/aisd-jse-05-functions-2/tree/solution) (link not shown).
+**Note:**  This lab references a solution file located [here](https://github.com/HackerUSA-CE/aisd-jse-06-arrays-2/tree/solution) (link not shown).
 
 ---
 © All rights reserved to ThriveDX
