@@ -1,276 +1,334 @@
- JavaScript Array Iterators and Callback Functions: `filter`, `sort`, and `every`
-![JavaScript code snippet showing examples of array iterator methods: filter, sort, and every](./assets/images/example.png)
+### JavaScript Functions: Declarations and Arrow Functions
+![JavaScript code snippet showing examples of function declarations and arrow functions.](./assets/images/example.png)
+##
 
 ## Description 📄
-In this assignment, you will work with JavaScript array methods like **`filter`**, **`sort`**, and **`every`**. These methods allow you to process arrays efficiently by filtering specific elements, sorting data, and checking if all elements meet certain conditions. You will apply these methods to both a numbers array and a words array. By the end of this assignment, you’ll have a deeper understanding of how to use these methods along with callback functions to manipulate arrays effectively.
+In this assignment, you will practice working with JavaScript **function declarations** and **arrow functions**. You will write functions that perform various mathematical operations, check if numbers are even or odd, and create personalized greeting messages. Each function will take arguments and return specific results. You will write all the function code inside a single file, `index.js`, and test them by logging the results to the console.
+
+By the end of this assignment, you'll be comfortable defining and using functions, passing in arguments, and handling return values.
 
 ## Expected Project Structure 🏗️
-
 Your project should be structured as follows:
 
 ```plaintext
-array-methods-practice/
-   app.js
+js-functions-practice/
+   index.js
 ```
 
 ## Instructions ✅
 
 ### 1. **Create the Project Folder and File**
-Before starting the coding process, ensure your development environment is prepared.
+Before you begin writing JavaScript code, ensure that you have your development environment ready.
 
-- [ ] Create a project folder named `array-methods-practice` to store your project files.
-- [ ] Inside the `array-methods-practice` folder, create a file named `index.js`. This will be your main JavaScript file where all your code will be written.
+ - [ ] Create a project folder named js-functions-practice to store your project files.
 
-##
-
-### 2. **Filter Method: Find Numbers Greater Than 10**
-In this step, you will use the `filter` method to create a new array that contains numbers greater than 10 from the `numbers` array. The `filter` method takes a callback function that defines the condition for which elements should be included in the new array. If an element meets the condition, it is added to the result.
-
-- [ ] Add the following code to your `index.js` file:
-
-```javascript
-// Array of numbers
-const numbers = [5, 12, 8, 130, 44];
-
-// Filter numbers greater than 10
-const filteredNumbers = numbers.filter((num) => num > 10);
-console.log("Filtered Numbers (Greater than 10):", filteredNumbers);  
-// Output: [12, 130, 44]
-```
-
-- [ ] Run your code using Node.js in the terminal:
-
-```bash
-node app.js
-```
-
-**Expected Output:**
-
-```bash
-Filtered Numbers (Greater than 10): [12, 130, 44]
-```
-
-**Explanation:**
-- **Iterates Over Each Element:** The `filter` method loops through each element of the `numbers` array and applies the provided condition (`num > 10`) to each element.
-- **Only Elements That Meet Condition:** Only elements that meet the condition (in this case, numbers greater than 10) are included in the new array.
-- **Returns a New Array:** Unlike methods that mutate the original array, `filter` returns a brand-new array, leaving the original `numbers` array unchanged. This immutability is useful in situations where preserving the original data is critical.
+ - [ ] Inside the js-functions-practice folder, create a file named `index.js`. This will be your main JavaScript file where all your code will be written.
 
 ##
 
-### 3. **Sort Method: Sort Numbers in Ascending Order**
-In this step, you'll sort the `numbers` array in ascending order using the `sort` method. By default, the `sort` method in JavaScript sorts elements as strings, which may lead to unexpected results when sorting numbers. To fix this, we will provide a custom comparison function `(a, b) => a - b`, which ensures the numbers are sorted correctly from smallest to largest. The `sort` method works by comparing pairs of elements and arranging them based on the return value of the comparison function.
+### 2. **Greeting Function (Standard Function Declaration)**
+In this section, you'll write a function that takes a person's name as an argument and returns a personalized greeting using the standard function declaration syntax. After writing the function, you will test it by logging the output to the console.
 
-- [ ] Add the following code to your `index.js` file:
-
-```javascript
-// Sort numbers in ascending order
-const sortedNumbers = numbers.sort((a, b) => a - b);
-console.log("Sorted Numbers (Ascending Order):", sortedNumbers);  
-// Output: [5, 8, 12, 44, 130]
-```
-
-- [ ] Run your code using Node.js in the terminal:
-
-```bash
-node app.js
-```
-
-**Expected Output:**
-
-```bash
-Sorted Numbers (Ascending Order): [5, 8, 12, 44, 130]
-```
-
-**Explanation:**
-- **Comparison Function:** The comparison function `(a, b) => a - b` ensures numeric sorting. When `a - b` returns a negative value, `a` comes before `b`; a positive result means `b` comes before `a`.
-- **Sorting Numbers Correctly:** Without this comparison function, `sort` would treat the numbers as strings (e.g., placing `130` before `12`). The comparison function ensures the numbers are sorted numerically in ascending order.
-- **Mutates the Original Array:** The `sort` method modifies the original `numbers` array, so it's important to be aware of this when working with data you want to preserve.
-
-##
-
-### 4. **Every Method: Check If All Numbers Are Greater Than 3**
-Next, you will use the `every` method to check if all the numbers in the `numbers` array are greater than 3. The `every` method checks whether all elements in the array satisfy the provided condition. If all elements pass the test, it returns `true`; otherwise, it returns `false`.
-
-- [ ] Add the following code to your `index.js` file:
+  - [ ] Add the following code to your index.js file:
 
 ```javascript
-// Check if all numbers are greater than 3
-const allGreaterThanThree = numbers.every((num) => num > 3);
-console.log("Are all numbers greater than 3?", allGreaterThanThree);  
-// Output: true
+// Function Declaration - Greeting function (Standard Function)
+function greet(name) {
+  return `Hello, ${name}! Welcome!`;
+}
+// Test the Greeting function
+console.log(greet("Alice")); // Output: Hello, Alice! Welcome!
 ```
-
-- [ ] Run your code using Node.js in the terminal:
-
-```bash
-node app.js
-```
-
-**Expected Output:**
-
-```bash
-Are all numbers greater than 3? true
-```
-
-**Explanation:**
-- **Tests Each Element:** The `every` method applies the condition `num > 3` to each element of the `numbers` array.
-- **Returns True Only If All Pass:** If every number in the array is greater than 3, it returns `true`. If any number fails the condition, it would return `false`.
-- **Common Use Case:** This method is helpful when you need to validate that all elements in an array meet a specific requirement, such as checking user input or form validation in a web app.
-
-##
-
-
-## 5. **Filter Method: Find Words Longer Than 5 Characters**
-Now, let's switch to working with the `words` array. You will use the `filter` method to find all words that are longer than 5 characters. The `filter` method allows you to create a new array containing only words that meet the length requirement.
-
-- [ ] Add the following code to your `index.js` file:
-
-```javascript
-// Array of words
-const words = ["banana", "strawberry", "kiwi", "grape", "apple"];
-
-// Filter words longer than 5 characters
-const longWords = words.filter((word) => word.length > 5);
-console.log("Words Longer Than 5 Characters:", longWords);  
-// Output: ['banana', 'strawberry']
-```
-
-- [ ] Run your code using Node.js in the terminal:
+ - [ ] Run your code using node in the terminal:
 
 ```bash
 node index.js
-```
 
+```
 **Expected Output:**
 
 ```bash
-Words Longer Than 5 Characters: ['banana', 'strawberry']
+Hello, Alice! Welcome!
 ```
 
 **Explanation:**
-- **Checks Length of Each Word:** The `filter` method evaluates the length of each word using `word.length > 5`. Words with more than 5 characters are included in the result.
-- **Returns New Array:** As with other uses of `filter`, the method creates a new array containing only the words that meet the length condition.
-- **Selective Filtering:** This method is particularly useful in applications where you need to extract data based on length, such as filtering search results or displaying specific categories of information.
+- This is a standard function declaration that takes one argument, name, and returns a greeting string.
+- It uses a template literal (the string with ${name}) to dynamically insert the name into the greeting message.
+- You can reuse this function by passing in different names to greet different users.
 
 ##
 
-### 6. **Sort Method: Sort Words Alphabetically**
-In this step, you will use the `sort` method to sort the words in the `words` array alphabetically. By default, `sort` orders strings in lexicographical (alphabetical) order, so no comparison function is needed here.
+### 3. **Greeting Function (Arrow Function)**
+Here, you'll rewrite the same greeting function using an arrow function syntax. 
+This will demonstrate how arrow functions are a more concise way to write functions.
 
-- [ ] Add the following code to your `index.js` file:
+  - [ ] Add the following code to your index.js file:
 
 ```javascript
-// Sort words alphabetically
-const sortedWords = words.sort();
-console.log("Alphabetically Sorted Words:", sortedWords);  
-// Output: ['apple', 'banana', 'grape', 'kiwi', 'strawberry']
-```
+// Arrow Function - Greeting function (Arrow Function)
+const greetArrow = (name) => `Hello, ${name}! Welcome!`;
 
-- [ ] Run your code using Node.js in the terminal:
+// Test the Arrow Function Greeting
+console.log(greetArrow("Bob")); // Output: Hello, Bob! Welcome!
+
+```
+ - [ ] Run your code using node in the terminal:
 
 ```bash
 node index.js
-```
 
+```
 **Expected Output:**
 
 ```bash
-Alphabetically Sorted Words: ['apple', 'banana', 'grape', 'kiwi', 'strawberry']
+Hello, Bob! Welcome!
+
 ```
 
 **Explanation:**
-- **Default Alphabetical Sorting:** The `sort` method, when used with strings, automatically sorts words alphabetically. No custom comparison function is required for strings.
-- **Modifies Original Array:** Like with numeric sorting, this method also modifies the original array by placing the words in alphabetical order.
-- **Sorting Text Data:** Sorting is commonly used in professional applications for ordering lists of names, categories, or any textual data.
+- This is an arrow function that performs the same task as the previous function, but with a shorter syntax.
+- Arrow functions allow you to omit the return keyword if the function body consists of a single expression.
+- The result is the same: a personalized greeting that uses template literals to insert the name.
 
 ##
 
-### 7. **Every Method: Check If All Words Contain the Letter 'e'**
-Finally, you will use the `every` method to check if all words in the `words` array contain the letter 'e'. This method will apply the condition `word.includes('e')` to each word.
+### 4. **Even or Odd Checker**
+Here, you'll write a function to determine whether a number is even or odd using a standard function declaration. 
+After defining the function, test it using console.log() with sample inputs.
 
-- [ ] Add the following code to your `index.js` file:
+  - [ ] Add the following code to your index.js file:
 
 ```javascript
-// Check if all words contain the letter 'e'
-const allContainE = words.every((word) => word.includes("e"));
-console.log('Do all words contain the letter "e"?', allContainE);  
-// Output: true
-```
+// Function Declaration - Check if a number is even or odd
+function isEvenOrOdd(number) {
+  if (number % 2 === 0) {
+    return `${number} is even`;
+  } else {
+    return `${number} is odd`;
+  }
+}
 
-- [ ] Run your code using Node.js in the terminal:
+// Test the Even or Odd function
+console.log(isEvenOrOdd(10)); // Output: 10 is even
+console.log(isEvenOrOdd(7));  // Output: 7 is odd
+
+```
+ - [ ] Run your code using node in the terminal:
 
 ```bash
 node index.js
-```
 
+```
 **Expected Output:**
 
 ```bash
-Do all words contain the letter "e"? true
+10 is even
+7 is odd
+
 ```
 
 **Explanation:**
-- **String Method Includes:** The `every` method checks whether each word contains the letter 'e' using the string method `includes()`. Since all the words in the array contain 'e', the method returns `true`.
-- **Useful for Data Validation:** This approach is valuable when checking for specific patterns or characters in text data, such as validating email addresses or searching for keywords.
+- This function uses a conditional statement (the if...else block) to check if the number is even or odd.
+- The modulus operator (%) checks if the number is divisible by 2. If the remainder is 0, the number is even; otherwise, it's odd.
+- The function returns a message dynamically including the number and whether it’s even or odd.
 
 ##
 
-### 8. **Every Method: Check If All Words Are Shorter Than 10 Characters**
-In this final step, you will use the `every` method again to check if all the words in the `words` array are shorter than 10 characters.
+### 5. **Square Function Using Arrow Function**
+Here, you'll write an arrow function that takes a number as input and returns the square of the number.
 
-- [ ] Add the following code to your `index.js` file:
+  - [ ] Add the following code to your index.js file:
 
 ```javascript
-// Check if all words are shorter than 10 characters
-const allShorterThan10 = words.every((word) => word.length < 10);
-console.log("Are all words shorter than 10 characters?", allShorterThan10);  
-// Output: false
-```
+// Arrow Function - A function that calculates the square of a number
+const square = (num) => num * num;
 
-- [ ] Run your code using Node.js in the terminal:
+// Test the Square function
+console.log(square(5)); // Output: 25
+
+```
+ - [ ] Run your code using node in the terminal:
 
 ```bash
 node index.js
-```
 
+```
 **Expected Output:**
 
 ```bash
-Are all words shorter than 10 characters? false
+25
+
 ```
 
 **Explanation:**
-- **Tests Word Length:** The `every` method checks whether each word in the `words` array is shorter than 10 characters.
-- **One Word Fails, Result is False:** Since "strawberry" has more than 10 characters, the method returns `false`, as not all words meet the length condition.
-- **Efficient Validation:** As with other uses of `every`, the method stops once it finds an element that fails the condition, making it efficient for larger datasets.
+- This is an arrow function that takes in one argument, num, and returns the square of that number.
+- The arrow function syntax is more concise here because the body contains a single expression. 
+- There is no need for a return statement when using arrow functions in this way.
+- The function can be used to calculate the square of any number by passing the number as an argument.
 
 ##
 
+### 6. **Add Function Using Arrow Function**
+In this step, you'll write an arrow function that takes two numbers and returns their sum.
+
+  - [ ] Add the following code to your index.js file:
+
+```javascript
+// Arrow Function - A function that calculates the sum of two numbers
+const add = (a, b) => a + b;
+
+// Test the Add function
+console.log(add(4, 6)); // Output: 10
+
+```
+ - [ ] Run your code using node in the terminal:
+
+```bash
+node index.js
+
+```
+**Expected Output:**
+
+```bash
+10
+
+```
+
+**Explanation:**
+- This arrow function takes two numbers as input (a and b) and returns their sum.
+- Again, there is no need for the return keyword because the function consists of a single expression.
+- Arrow functions are especially useful for short operations like this one.
+
+##
+
+### 7. **Subtract Function Using Arrow Function**
+Next, you'll write an arrow function that calculates the difference between two numbers.
+
+  - [ ] Add the following code to your index.js file:
+
+```javascript
+// Arrow Function - A function that calculates the difference between two numbers
+const subtract = (a, b) => a - b;
+
+// Test the Subtract function
+console.log(subtract(10, 3)); // Output: 7
+
+```
+ - [ ] Run your code using node in the terminal:
+
+```bash
+node index.js
+
+```
+**Expected Output:**
+
+```bash
+7
+
+```
+
+**Explanation:**
+- This arrow function takes two numbers as input and returns the difference (a - b).
+- The use of arrow functions allows for a concise and readable format, especially for simple mathematical operations.
+- You can reuse this function with any two numbers to calculate their difference.
+
+### 8. **Multiply Function Using Arrow Function**
+Now, you'll write an arrow function that multiplies two numbers together.
+
+  - [ ] Add the following code to your index.js file:
+
+```javascript
+// Arrow Function - A function that multiplies two numbers
+const multiply = (a, b) => a * b;
+
+// Test the Multiply function
+console.log(multiply(7, 5)); // Output: 35
+
+```
+ - [ ] Run your code using node in the terminal:
+
+```bash
+node index.js
+
+```
+**Expected Output:**
+
+```bash
+35
+
+```
+
+**Explanation:**
+- This arrow function takes two numbers as input and returns their product (a * b).
+- It's a simple and efficient way to multiply two numbers, and the arrow function format keeps the syntax clean and concise.
+- You can test this with any two numbers to get their product.
+
+##
+
+### 9. **Divide Function Using Arrow Function**
+Finally, you'll write an arrow function that divides two numbers and handles division by zero.
+
+  - [ ] Add the following code to your index.js file:
+
+```javascript
+// Arrow Function - A function that divides two numbers
+const divide = (a, b) => {
+  if (b === 0) {
+    return "Cannot divide by zero!";
+  }
+  return a / b;
+};
+
+// Test the Divide function
+console.log(divide(20, 4)); // Output: 5
+console.log(divide(10, 0)); // Output: Cannot divide by zero!
+
+```
+ - [ ] Run your code using node in the terminal:
+
+```bash
+node index.js
+
+```
+**Expected Output:**
+
+```bash
+5
+Cannot divide by zero!
+
+```
+
+**Explanation:**
+- This arrow function divides two numbers and includes a conditional check to handle division by zero.
+- The if statement ensures that if the divisor (b) is zero, the function will return an error message instead of performing the division.
+- This function is more robust as it handles both normal division and error cases.
+
+##
 
 ## Conclusion 📄
 
-In this assignment, you learned how to use JavaScript array methods like **`filter`**, **`sort`**, and **`every`** to manipulate arrays. You worked with both numbers and strings to see how these methods function across different data types. By writing callback functions and using these methods, you now have a solid understanding of how to iterate through arrays, perform operations, and return new results based on specific conditions.
+In this assignment, you practiced defining and using both **function declarations** and **arrow functions** in JavaScript. By writing functions to perform tasks such as greeting users, checking if numbers are even or odd, and performing basic math operations, you enhanced your understanding of how functions take in arguments, process them, and return results.
 
 ### Key Takeaways:
-- **`filter` Method**: Returns a new array with elements that satisfy a given condition. It allows selective extraction of relevant data.
-- **`sort` Method**: Sorts array elements, with or without a comparison function, depending on the data type. This is crucial for sorting both numbers and strings correctly.
-- **`every` Method**: Returns `true` only if all elements in the array meet a specific condition, making it ideal for validation checks.
-
-### Professional Use:
-In real-world, professional scenarios, these array methods are essential tools in JavaScript. They are used across various industries for handling and processing data efficiently. For instance, `filter` is commonly employed to display relevant data (e.g., filtering products based on criteria in e-commerce platforms), `sort` is critical for ranking and ordering items (e.g., sorting user reviews or search results), and `every` is valuable for validation processes (e.g., ensuring that all user input fields are correctly filled before submission).
-
-Understanding how to use these array methods will empower you to work with large datasets, implement dynamic filtering, and ensure data consistency in real-world applications.
+1. **Standard Functions**: These use the `function` keyword and are suitable for more complex functions with multiple lines or when needing a more explicit structure. They can handle more extensive logic and are compatible with older versions of JavaScript.
+2. **Arrow Functions**: Arrow functions offer a shorter and cleaner syntax. They omit the `function` keyword, and if the function body consists of a single expression, you can also omit the `return` keyword. Arrow functions are excellent for concise logic but may behave differently in more complex contexts, particularly with `this` keyword handling.
+   
+### Further Practice:
+- **Modify the Passed Values**: Go back and change the values being passed into each function to test how the functions behave with different inputs. For example, try passing different names to the greeting function or test the even/odd function with other numbers. 
+- **Explore Arrow Functions Further**: Consider converting the functions you wrote as standard functions into arrow functions. This will give you more familiarity with their syntax and how they compare to regular function declarations.
+  
+Understanding both types of functions and how to use them interchangeably will give you more flexibility in writing clean, efficient code, especially as you work with modern JavaScript features. Keep experimenting and modifying the functions to see how changes to inputs can lead to different outputs and outcomes.
+"""
 
 ##
+
 
 ### Solution codebase 👀
 🛑 **Only use this as a reference** 🛑
 
 💾 **Not something to copy and paste** 💾
 
-**Note:**  This lab references a solution file located [here](https://github.com/HackerUSA-CE/aisd-wde-4-the-box-model/tree/solution) (link not shown).
-
+**Note:**  This lab references a solution file located [here](https://github.com/HackerUSA-CE/aisd-jse-06-arrays-2/tree/solution) (link not shown).
 
 ---
-
 © All rights reserved to ThriveDX
